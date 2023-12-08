@@ -14,7 +14,9 @@ class UsuarioController extends AppController
 
     public function index() {
         $usuarios = $this->paginate($this->Usuario);
-        // $this->Authorization->authorize($usuarios);
+
+        $usuario = $this->Usuario->findById(1)->firstOrFail();
+        $this->Authorization->authorize($usuario);
 
         $this->set(compact("usuarios"));
     }

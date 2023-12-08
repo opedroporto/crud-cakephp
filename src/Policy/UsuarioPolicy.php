@@ -12,7 +12,7 @@ use Authorization\IdentityInterface;
 class UsuarioPolicy
 {
     public function canIndex(IdentityInterface $user, Usuario $usuario) {
-        return $user->id = 1;
+        return $user->id == 1;
     }
 
     /**
